@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ShineOnce-publish" />
+        <module name="ShineOnce-collection" />
+        <module name="ShineOnce-search" />
+        <module name="ShineOnce-common" />
+        <module name="ShineOnce-comment" />
+        <module name="ShineOnce-feed" />
+        <module name="ShineOnce-like" />
+        <module name="ShineOnce-review" />
+        <module name="ShineOnce-im" />
+        <module name="ShineOnce-gateway" />
+        <module name="ShineOnce-user" />
+        <module name="ShineOnce-follow" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ShineOnce-classification" target="8" />
+      <module name="ShineOnce-collect" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ShineOnce" options="-parameters" />
+      <module name="ShineOnce-classification" options="-parameters" />
+      <module name="ShineOnce-collect" options="-parameters" />
+      <module name="ShineOnce-collection" options="-parameters" />
+      <module name="ShineOnce-comment" options="-parameters" />
+      <module name="ShineOnce-common" options="-parameters" />
+      <module name="ShineOnce-feed" options="-parameters" />
+      <module name="ShineOnce-follow" options="-parameters" />
+      <module name="ShineOnce-gateway" options="-parameters" />
+      <module name="ShineOnce-im" options="-parameters" />
+      <module name="ShineOnce-like" options="-parameters" />
+      <module name="ShineOnce-publish" options="-parameters" />
+      <module name="ShineOnce-review" options="-parameters" />
+      <module name="ShineOnce-search" options="-parameters" />
+      <module name="ShineOnce-user" options="-parameters" />
+    </option>
+  </component>
+</project>
