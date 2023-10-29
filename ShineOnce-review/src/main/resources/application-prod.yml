@@ -1,11 +1,9 @@
-server:
-  port: 8002
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://geniussbg.cn:3306/seven_cow_cloud?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: genius_server_0704
+    url: jdbc:mysql://${MYSQL_ADDR:geniussbg.cn:3306}/${MYSQL_DATABASE:seven_cow_cloud}?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:genius_server_0704}
     druid:
       initial-size: 5 #连接池初始化大小
       min-idle: 10 #最小空闲连接数
@@ -16,13 +14,13 @@ spring:
         login-username: druid
         login-password: druid
   redis:
-    host: geniussbg.cn # Redis服务器地址
+    host: ${REDIS_ADDR:geniussbg.cn} # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
-    port: 6379 # Redis服务器连接端口
-    password:  # Redis服务器连接密码（默认为空）
+    port: ${REDIS_PORT:6379} # Redis服务器连接端口
+    password: ${REDIS_PWD:genius_server_0704} # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
   application:
-    name: CommentApplication
+    name: shineonce-review${UNIQUE_ID:0}-service
   cloud:
     nacos:
       server-addr: ${NACOS_SERVER_ADDR:geniussbg.cn:8848}
@@ -32,8 +30,17 @@ spring:
         file-extension: yaml
       discovery:
         ip: ${SERVER_ADDR:geniussbg.cn}
-#mybatis-plus
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  rabbitmq:
+    host: ${MQ_ADDR:geniussbg.cn} # rabbitMQ的ip地址
+    port: ${MQ_PORT:5672} # 端口
+    username: ${MQ_USERNAME:root}
+    password: ${MQ_PWD:genius_server_0704}
+    virtual-host: /
+    listener:
+      simple:
+        prefetch: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
