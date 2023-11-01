@@ -1,8 +1,6 @@
 package com.axkea.review.core.examine;
 
 import com.axkea.review.common.ExamineEvent;
-import com.axkea.review.common.RedisKey;
-import com.axkea.review.config.RedisKeyConfig;
 import com.rabbitmq.client.Channel;
 import lombok.Data;
 import org.springframework.data.redis.core.StringRedisTemplate;

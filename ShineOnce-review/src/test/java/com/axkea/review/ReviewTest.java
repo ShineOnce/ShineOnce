@@ -1,23 +1,12 @@
 package com.axkea.review;
 
-<<<<<<< HEAD
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-public class ReviewTest {
-=======
-import com.alibaba.fastjson.JSON;
 import com.axkea.review.common.ExamineEvent;
 import com.axkea.review.common.mq.protocl.MqMsg;
 import com.axkea.review.common.mq.protocl.MqProtocol;
-import com.axkea.review.core.examine.config.QiNiuConfig;
 import com.axkea.review.mq.config.ConfirmCallbackService;
 import com.axkea.review.util.random.NumberRandomMachine;
 import com.axkea.review.util.random.RandomFactory;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.qiniu.common.QiniuException;
-import com.qiniu.http.Client;
-import com.qiniu.util.Auth;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -25,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
 
 @SpringBootTest
 public class ReviewTest {
@@ -64,6 +51,4 @@ public class ReviewTest {
         }
         Thread.sleep(5000);
     }
-
->>>>>>> 507f81ae7f9134f92bc13dca79737eb98772735c
 }

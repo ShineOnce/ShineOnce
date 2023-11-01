@@ -1,6 +1,6 @@
 package com.axkea.review.core.examine;
 
-import com.axkea.review.review.common.ExamineEvent;
+import com.axkea.review.common.ExamineEvent;
 
 public interface ExamineHandler {
 
