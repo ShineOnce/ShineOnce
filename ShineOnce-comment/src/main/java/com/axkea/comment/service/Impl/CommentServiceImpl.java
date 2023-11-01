@@ -1,6 +1,5 @@
 package com.axkea.comment.service.Impl;
 
-import com.alibaba.spring.util.BeanUtils;
 import com.axkea.comment.client.UserClientService;
 import com.axkea.comment.dao.FirstCommentMapper;
 import com.axkea.comment.dao.SecondCommentMapper;
@@ -12,14 +11,12 @@ import com.axkea.comment.pojo.vo.FirstLevelCommentVO;
 import com.axkea.comment.pojo.vo.SecondLevelCommentVO;
 import com.axkea.comment.service.CommentService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Description

@@ -1,9 +1,13 @@
 server:
   port: 8007
 spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://geniusay.com:3306/music?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://geniussbg.cn0000:3306/seven-cow-cloud?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     username: root
     password: genius_server_0704
     druid:
@@ -25,10 +29,15 @@ spring:
     name: PublishApplication
   cloud:
     nacos:
+      server-addr: ${NACOS_SERVER_ADDR:geniussbg.cn:8848}
+      username: ${NACOS_SERVER_USER:nacos}
+      password: ${NACOS_SERVER_PASSWORD:keKEaiai5201314}
+      config:
+        file-extension: yaml
       discovery:
-        server-addr: geniusay.com:8848
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+        ip: ${SERVER_ADDR:geniussbg.cn}
+#mybatis-plus
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
