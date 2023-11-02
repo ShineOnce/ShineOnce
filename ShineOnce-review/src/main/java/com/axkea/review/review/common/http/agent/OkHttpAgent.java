@@ -1,5 +1,6 @@
 package com.axkea.review.review.common.http.agent;
 
+import com.axkea.review.common.http.agent.ProxyAgent;
 import okhttp3.OkHttpClient;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2023/10/27 03:50
  **/
 @Component
-public class OkHttpAgent implements ProxyAgent<OkHttpClient>{
+public class OkHttpAgent implements ProxyAgent<OkHttpClient> {
 
     @Override
     public OkHttpClient agentClient() {
