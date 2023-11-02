@@ -1,6 +1,5 @@
 package com.axkea.common.api;
 
-import lombok.Data;
 
 import java.io.Serializable;
 
