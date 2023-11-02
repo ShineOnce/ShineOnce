@@ -1,4 +1,4 @@
-package com.axkea.user.domain;
+package com.axkea.like.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -13,36 +13,24 @@ import java.util.Date;
 
 /**
  * @Author Axkea
- * @Date 2023/10/25/025 16:28
+ * @Date 2023/10/26/026 20:29
  * @Description
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User implements Serializable {
+public class Like implements Serializable {
     private static final long serialVersionUID = 2023L;
 
     @TableId(type = IdType.ASSIGN_ID)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
-    private String username;
+    private Long userId;
 
-    private String password;
+    private Long videoId;
 
-    private String avatar;
-
-    private String signature;
-
-    private boolean enabled = true;
-
-    private boolean activation = false;
-
-    private Integer age ;
-
-    private boolean gender = false;
-
-    private String email;
+    private Long authorId;
 
     private Date createdAt;
 

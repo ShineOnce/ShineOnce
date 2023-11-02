@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.axkea.like.dao.LikeDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.axkea.like.domain.Like">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="video_id" property="videoId"/>
+        <result column="author_id" property="authorId"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="update_at" property="updateAt"/>
+
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        user_id,
+        video_id,
+        author_id,
+        created_at,
+        update_at,
+    </sql>
+
+<!-- 通过用户id查询喜欢列表-->
+    <select id="getLikeVideoIdListByUserID" resultType="Long">
+
+        select video_id from like
+        <where>
+            <if test="userId != null">
+                user_id = #{userId}
+            </if>
+        </where>
+
+    </select>
+<!--通过videoId查询视频点赞数-->
+    <select id="getVideoLikeNumberByVideoId" resultType="Long">
+
+        select count(*) from like
+        <where>
+            <if test="videoId != null">
+                video_id = #{videoId}
+            </if>
+
+        </where>
+
+    </select>
+<!-- 通过userId查询用户点赞数-->
+    <select id="getToLikeNumber" resultType="Long">
+        select count(*) from like
+        <where>
+            <if test="userId != null">
+                user_id = #{userId}
+            </if>
+        </where>
+    </select>
+
+<!--通过authorId查询用户获赞数-->
+    <select id="getForLikerNumber" resultType="Long">
+
+        select count(*) from like
+        <where>
+            <if test="authorId != null">
+                author_id = #{authorId}
+            </if>
+        </where>
+
+    </select>
+</mapper>

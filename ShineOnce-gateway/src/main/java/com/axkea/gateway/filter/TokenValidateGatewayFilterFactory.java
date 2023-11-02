@@ -44,7 +44,7 @@ public class TokenValidateGatewayFilterFactory extends AbstractGatewayFilterFact
     /**
      * 注销用户时需要传递 Token
      */
-    public static final String DELETION_PATH = "xxx";//用户注销api
+    public static final String DELETION_PATH = "用户注销路径";
 
     @Override
     public GatewayFilter apply(Config config) {
