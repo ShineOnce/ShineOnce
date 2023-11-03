@@ -23,12 +23,17 @@ spring:
     timeout: 3000ms # 连接超时时间（毫秒）
   application:
     name: FeedApplication
-  cloud:
-    nacos:
-      discovery:
-        server-addr: geniusay.com:8848
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+cloud:
+  nacos:
+    server-addr: ${NACOS_SERVER_ADDR:geniussbg.cn:8848}
+    username: ${NACOS_SERVER_USER:nacos}
+    password: ${NACOS_SERVER_PASSWORD:keKEaiai5201314}
+    config:
+      file-extension: yaml
+    discovery:
+      ip: ${SERVER_ADDR:geniussbg.cn}
+#mybatis-plus
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
