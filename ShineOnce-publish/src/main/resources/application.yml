@@ -41,3 +41,10 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+oss:
+  qiniuyun:
+    accessKey: 4rdOegZZUy1gurS8qMMI7AZN12p0p62vIaaH08QR
+    secretKey: WgwuUrvEnjBOLPnMe8mYvi3S8IxTzIN1qp22bGqM
+    bucketFileName: seven-cow-cloud
+    domainFile: geniussbg.cn
+

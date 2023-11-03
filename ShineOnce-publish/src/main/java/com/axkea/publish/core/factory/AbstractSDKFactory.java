@@ -1,6 +1,7 @@
-package com.axkea.publish.factory;
+package com.axkea.publish.core.factory;
 
 import com.axkea.common.api.Result;
+import com.axkea.publish.pojo.vo.VideoUploadVO;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,6 +14,6 @@ import java.io.File;
  */
 public interface AbstractSDKFactory {
 
-    Result uploadFile(File file, String usrId);
+    Result uploadFile(VideoUploadVO videoUploadVO);
 
 }
