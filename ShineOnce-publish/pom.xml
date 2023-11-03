@@ -19,32 +19,6 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-<!--        七牛云SDK及相关依赖-->
-        <dependency>
-            <groupId>com.qiniu</groupId>
-            <artifactId>qiniu-java-sdk</artifactId>
-            <version>[7.13.0, 7.13.99]</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>3.14.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.5</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.qiniu</groupId>
-            <artifactId>happy-dns-java</artifactId>
-            <version>0.1.6</version>
-            <scope>test</scope>
-        </dependency>
-<!--        end-->
-
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
