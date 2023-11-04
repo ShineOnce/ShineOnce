@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_ADDR:geniussbg.cn:3306}/${MYSQL_DATABASE:seven_cow_cloud}?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://${MYSQL_ADDR:geniussbg.cn:13306}/${MYSQL_DATABASE:seven_cow_cloud}?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:genius_server_0704}
     druid:
@@ -16,14 +16,14 @@ spring:
   redis:
     host: ${REDIS_ADDR:geniussbg.cn} # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
-    port: ${REDIS_PORT:6379} # Redis服务器连接端口
+    port: ${REDIS_PORT:16379} # Redis服务器连接端口
     password: ${REDIS_PWD:keKEaiai5201314} # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
   application:
     name: shineonce-review${UNIQUE_ID:0}-service
   cloud:
     nacos:
-      server-addr: ${NACOS_SERVER_ADDR:geniussbg.cn:8848}
+      server-addr: ${NACOS_SERVER_ADDR:geniussbg.cn:18848}
       username: ${NACOS_SERVER_USER:nacos}
       password: ${NACOS_SERVER_PASSWORD:keKEaiai5201314}
       config:

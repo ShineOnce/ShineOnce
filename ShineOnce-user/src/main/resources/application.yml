@@ -27,6 +27,7 @@ spring:
     nacos:
       discovery:
         server-addr: geniussbg.cn:8848
+
 management:
   endpoints:
     web:

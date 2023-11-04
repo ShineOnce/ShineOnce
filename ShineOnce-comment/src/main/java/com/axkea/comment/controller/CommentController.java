@@ -45,8 +45,8 @@ public class CommentController {
     }
 
     @GetMapping("getComment/{videoId}")
-    public Result<List<VideoComment>> getCommentByVId(@PathVariable Long videoId){
-        return Result.success(commentService.getCommentByVId(videoId));
+    public Result<List<VideoComment>> getCommentByVId(@PathVariable String videoId){
+        return Result.success(commentService.getCommentByVId(Long.parseLong(videoId)));
     }
 
 }

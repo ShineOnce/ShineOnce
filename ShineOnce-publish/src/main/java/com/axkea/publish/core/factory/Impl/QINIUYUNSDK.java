@@ -12,6 +12,7 @@ import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 
@@ -27,12 +28,14 @@ import java.util.Date;
  * @Date 2023/11/1 14:40
  */
 @Component
+@Slf4j
 public class QINIUYUNSDK implements AbstractSDKFactory {
     @Override
     public Result uploadFile(VideoUploadVO videoUploadVO) {
         Response res;
-        System.out.println(videoUploadVO.getFile().getResource().getFilename());
+        log.info("上传文件名{}",videoUploadVO.getFile().getResource().getFilename());
         try {
+            //MultipartFile 转 file 需要本地实例化文件
             File file = new File("D://1.mp4");
             if (!file.exists()) {
                 file.createNewFile();
@@ -48,7 +51,7 @@ public class QINIUYUNSDK implements AbstractSDKFactory {
             String filename = Constant.VIDEO+videoUploadVO.getUserId()+"/"+format.format(date);
             res = uploadManager.put(file, filename, uploadToken);
             DefaultPutRet defaultPutRet = new Gson().fromJson(res.bodyString(), DefaultPutRet.class);
-            System.out.println(defaultPutRet);
+            log.info("回调信息:{}",defaultPutRet.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
