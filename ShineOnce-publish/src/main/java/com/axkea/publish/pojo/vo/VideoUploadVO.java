@@ -15,4 +15,5 @@ public class VideoUploadVO {
     private MultipartFile file;
     private String title;
     private String userId;
+    private String tag;
 }

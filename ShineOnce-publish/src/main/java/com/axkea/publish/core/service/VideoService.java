@@ -1,6 +1,7 @@
 package com.axkea.publish.core.service;
 
-import com.axkea.publish.pojo.Video;
+import com.axkea.common.pojo.Video;
+import com.axkea.publish.pojo.dto.VideoCardDTO;
 
 import java.util.List;
 
@@ -12,5 +13,7 @@ import java.util.List;
 public interface VideoService {
 
     List<Video> getVideoByUserId(String userId);
+
+    VideoCardDTO getVideoCard();
 
 }

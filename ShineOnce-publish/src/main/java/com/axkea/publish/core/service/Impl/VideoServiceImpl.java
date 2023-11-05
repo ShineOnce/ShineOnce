@@ -3,15 +3,16 @@ package com.axkea.publish.core.service.Impl;
 import com.axkea.publish.core.constant.Constant;
 import com.axkea.publish.core.service.VideoService;
 import com.axkea.publish.mapper.VideoMapper;
-import com.axkea.publish.pojo.Video;
+import com.axkea.common.pojo.Video;
+import com.axkea.publish.pojo.dto.VideoCardDTO;
 import com.qiniu.storage.BucketManager;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
+import com.qiniu.storage.model.FileInfo;
 import com.qiniu.util.Auth;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -33,8 +34,16 @@ public class VideoServiceImpl implements VideoService {
         String prefix = Constant.VIDEO+"/"+userId;
         BucketManager.FileListIterator iterator = bucketManager.createFileListIterator(Constant.bucketFileName, prefix);
         while (iterator.hasNext()){
-            System.out.println(Arrays.toString(iterator.next()));
+            FileInfo[] fileInfos = iterator.next();
+            for (FileInfo fileInfo : fileInfos) {
+                System.out.println(fileInfo.key);
+            }
         }
+        return null;
+    }
+
+    @Override
+    public VideoCardDTO getVideoCard() {
         return null;
     }
 }

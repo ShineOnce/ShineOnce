@@ -1,6 +1,6 @@
 package com.axkea.publish.mapper;
 
-import com.axkea.publish.pojo.Video;
+import com.axkea.common.pojo.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -3,7 +3,8 @@ package com.axkea.publish.core.controller;
 import com.axkea.common.api.Result;
 import com.axkea.publish.core.factory.AbstractSDKFactory;
 import com.axkea.publish.core.service.VideoService;
-import com.axkea.publish.pojo.Video;
+import com.axkea.common.pojo.Video;
+import com.axkea.publish.pojo.dto.VideoCardDTO;
 import com.axkea.publish.pojo.vo.VideoUploadVO;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +38,11 @@ public class VideoController {
     @GetMapping("/{userid}")
     public Result<List<Video>> getVideoListByUserId(@PathVariable String userid){
         return Result.success(videoService.getVideoByUserId(userid));
+    }
+
+    @GetMapping("/videoCard")
+    public Result<VideoCardDTO> getVideoCard(){
+        return null;
     }
 
 }

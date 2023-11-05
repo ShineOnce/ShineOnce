@@ -1,4 +1,4 @@
-package com.axkea.publish.pojo;
+package com.axkea.common.pojo;
 
 import lombok.Data;
 
@@ -14,6 +14,8 @@ public class Video {
 
     private Long id;
     private Long userId;
+    private String title;
+    private String description;
     private String videoUrl;
     private String coverUrl;
     private String collectionCount;

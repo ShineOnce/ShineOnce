@@ -27,7 +27,7 @@ public class ReviewTest {
     MqProtocol mqProtocol;
 
     @Test
-    public void testSendDirectExchange() throws JsonProcessingException, InterruptedException {
+    public void testSendDirectExchange() throws InterruptedException {
         // 交换机名称
 
         // 发送消息
