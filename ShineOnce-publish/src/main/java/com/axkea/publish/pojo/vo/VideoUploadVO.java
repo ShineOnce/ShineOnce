@@ -16,4 +16,5 @@ public class VideoUploadVO {
     private String title;
     private String userId;
     private String tag;
+    private String description;
 }

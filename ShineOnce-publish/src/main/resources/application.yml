@@ -7,7 +7,7 @@ spring:
       max-request-size: 300MB
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://geniussbg.cn0000:3306/seven-cow-cloud?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://geniussbg.cn:13306/seven_cow_cloud?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     username: root
     password: genius_server_0704
     druid:

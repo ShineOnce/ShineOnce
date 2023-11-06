@@ -33,7 +33,7 @@ public class ReviewListener {
 
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(name = MqConst.VIDEO_QUEUE),
-            exchange = @Exchange(name = MqConst.SHINEONCE_DIRECT_EXCHANGE, type = ExchangeTypes.DIRECT),
+            exchange = @Exchange(name = MqConst.SHINEONCE_DIRECT_EXCHANGE),
             key = {"video"}
     ),ackMode = "MANUAL")
     public void listenVideoQueue(Message message, Channel channel){

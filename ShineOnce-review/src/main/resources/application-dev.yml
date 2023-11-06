@@ -32,7 +32,7 @@ spring:
         ip: ${SERVER_ADDR:geniussbg.cn}
   rabbitmq:
     host: ${MQ_ADDR:geniussbg.cn} # rabbitMQ的ip地址
-    port: ${MQ_PORT:5672} # 端口
+    port: ${MQ_PORT:15672} # 端口
     username: ${MQ_USERNAME:root}
     password: ${MQ_PWD:genius_server_0704}
     virtual-host: /

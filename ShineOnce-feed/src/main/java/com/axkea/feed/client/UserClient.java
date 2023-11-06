@@ -17,6 +17,4 @@ public interface UserClient {
 
     @GetMapping("/user/getInfo")
     User getUser(@RequestParam("uid") String id);
-
-
 }

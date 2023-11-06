@@ -14,6 +14,4 @@ public interface VideoService {
 
     List<Video> getVideoByUserId(String userId);
 
-    VideoCardDTO getVideoCard();
-
 }

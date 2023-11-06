@@ -2,6 +2,7 @@ package com.axkea.review.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.concurrent.TimeUnit;
 

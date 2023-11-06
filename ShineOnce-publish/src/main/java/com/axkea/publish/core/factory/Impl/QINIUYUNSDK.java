@@ -1,8 +1,10 @@
 package com.axkea.publish.core.factory.Impl;
 
 import com.axkea.common.api.Result;
+import com.axkea.common.pojo.Video;
 import com.axkea.publish.core.constant.Constant;
 import com.axkea.publish.core.factory.AbstractSDKFactory;
+import com.axkea.publish.mapper.VideoMapper;
 import com.axkea.publish.pojo.vo.VideoUploadVO;
 import com.google.gson.Gson;
 import com.qiniu.http.Response;
@@ -16,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -30,10 +33,12 @@ import java.util.Date;
 @Component
 @Slf4j
 public class QINIUYUNSDK implements AbstractSDKFactory {
+    @Resource
+    VideoMapper videoMapper;
     @Override
     public Result uploadFile(VideoUploadVO videoUploadVO) {
         Response res;
-        log.info("上传文件名{}",videoUploadVO.getFile().getResource().getFilename());
+        log.info("上传文件名:{}",videoUploadVO.getFile().getResource().getFilename());
         try {
             //MultipartFile 转 file 需要本地实例化文件
             File file = new File("D://1.mp4");
@@ -51,7 +56,21 @@ public class QINIUYUNSDK implements AbstractSDKFactory {
             String filename = Constant.VIDEO+videoUploadVO.getUserId()+"/"+format.format(date);
             res = uploadManager.put(file, filename, uploadToken);
             DefaultPutRet defaultPutRet = new Gson().fromJson(res.bodyString(), DefaultPutRet.class);
-            log.info("回调信息:{}",defaultPutRet.toString());
+            Video build = Video.builder()
+                    .title(videoUploadVO.getTitle())
+                    .likeCount("0")
+                    .collectionCount("0")
+                    .videoUrl(Constant.DOMAIN+defaultPutRet.key)
+                    .coverUrl("null")
+                    .userId(Long.parseLong(videoUploadVO.getUserId()))
+                    .description(videoUploadVO.getDescription())
+                    .tagId(videoUploadVO.getTag())
+                    .createAt(new Date(System.currentTimeMillis()))
+                    .updateAt(new Date(System.currentTimeMillis()))
+                    .isReview(true)
+                    .build();
+            videoMapper.insert(build);
+            log.info("回调信息:{}",defaultPutRet.key);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

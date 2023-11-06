@@ -29,12 +29,11 @@ public class ReviewTest {
     @Test
     public void testSendDirectExchange() throws InterruptedException {
         // 交换机名称
-
+        String exchangeName = "shineonce.direct";
         // 发送消息
         for (int i = 0; i < 1; i++) {
-            String exchangeName = "shineonce.direct";
             // 消息
-            ExamineEvent build = ExamineEvent.builder().content("原来是这样的").url("https://timemachinelab.oss-cn-hangzhou.aliyuncs.com/11%3Ayuan.png").build();
+            ExamineEvent build = ExamineEvent.builder().url("https://welsir.oss-cn-hangzhou.aliyuncs.com/IMG_2345.PNG").build();
             MqMsg<ExamineEvent> mqMsg = MqMsg.<ExamineEvent>builder()
                     .msgId(RandomFactory.RandomMachine(NumberRandomMachine.class).random())
                     .body(build)
@@ -42,9 +41,11 @@ public class ReviewTest {
 
             Message encode = mqProtocol.encode(mqMsg);
             rabbitTemplate.setConfirmCallback(confirmCallbackService);
-            rabbitTemplate.convertAndSend(exchangeName, "img", encode);
+            rabbitTemplate.convertAndSend(exchangeName, "video", encode);
+            System.out.println(rabbitTemplate.getDefaultReceiveQueue());
+            rabbitTemplate.setDefaultReceiveQueue("");
             rabbitTemplate.invoke(operations->{
-                System.out.println(operations);
+                System.out.println("operations:"+operations);
                 System.out.println("回调");
                 return null;
             });
