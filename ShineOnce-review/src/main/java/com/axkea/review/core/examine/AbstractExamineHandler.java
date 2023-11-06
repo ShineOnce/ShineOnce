@@ -8,7 +8,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import javax.annotation.Resource;
 
 /**
- * @author Genius
+ * @author welsir
  * @date 2023/10/26 23:20
  **/
 @Data

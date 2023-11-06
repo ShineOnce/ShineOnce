@@ -55,6 +55,7 @@ public class QiNiuExamineHandler extends AbstractExamineHandler{
 
     @Override
     public boolean examineVideo(ExamineEvent context) {
+        System.out.println("审核实体类:"+context);
         QiNiuMsgBuilder builder = new QiNiuMsgBuilder()
                 .data("uri", context.getUrl())
                 .data("id",context.getEventId())
@@ -72,6 +73,7 @@ public class QiNiuExamineHandler extends AbstractExamineHandler{
                 return true;
             }
         }catch (Exception e){
+            System.out.println(e.getMessage());
             return false;
         }
         return false;

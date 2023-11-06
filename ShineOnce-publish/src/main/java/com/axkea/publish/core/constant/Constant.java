@@ -7,7 +7,9 @@ package com.axkea.publish.core.constant;
  */
 public class Constant {
 
-    public static final String VIDEO = "video";
+    public static final String VIDEO = "video/";
+    public static final String FILE_TYPE = ".mp4";
+    public static final String DOMAIN = "http://s3dzewpfp.hn-bkt.clouddn.com/";
 
     public static String accessKey;
     public static String secretKey;

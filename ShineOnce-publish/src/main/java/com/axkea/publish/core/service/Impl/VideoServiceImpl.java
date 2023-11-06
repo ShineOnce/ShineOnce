@@ -42,8 +42,4 @@ public class VideoServiceImpl implements VideoService {
         return null;
     }
 
-    @Override
-    public VideoCardDTO getVideoCard() {
-        return null;
-    }
 }

@@ -22,9 +22,6 @@ public class VideoController {
 
     @Resource
     AbstractSDKFactory sdkFactory;
-    @Resource
-    VideoService videoService;
-
 
     @PostMapping("/upload")
     public Result uploadVideo(VideoUploadVO videoUploadVO){
@@ -35,14 +32,5 @@ public class VideoController {
         }
     }
 
-    @GetMapping("/{userid}")
-    public Result<List<Video>> getVideoListByUserId(@PathVariable String userid){
-        return Result.success(videoService.getVideoByUserId(userid));
-    }
-
-    @GetMapping("/videoCard")
-    public Result<VideoCardDTO> getVideoCard(){
-        return null;
-    }
 
 }

@@ -3,7 +3,7 @@ package com.axkea.review.util.random;
 import java.security.SecureRandom;
 
 /**
- * @author Genius
+ * @author welsir
  * @date 2023/10/26 23:13
  **/
 public class NumberRandomMachine implements RandomMachine<Long>{
